@@ -1,0 +1,72 @@
+.login_card
+{
+    width : auto;
+    padding: 30px;
+}
+
+.bgColorSet
+{
+    background-color:  #e6e6e6;
+    height: 100vh;
+    overflow:hidden;
+}
+
+.bgColorSet .container
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-bottom-wrapper
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+@media only screen and (max-width: 600px)
+{  
+    .login-bottom-wrapper
+    {
+        flex-direction: column;
+    }
+}
+.page-style
+{
+    background-color: #333333;
+    min-height: 100vh;
+    border-radius: 20px; 
+}
+
+.detail-block
+{
+    margin-top: 35px;
+    /* text-align: left; */
+    padding: 20px;
+    
+}
+
+.password-wrapper 
+{
+    position: relative;
+}
+
+i
+{
+    position: absolute;
+    right: 5px;
+    top: 6px;
+}
+
+@media only screen and (min-width: 600px)
+{
+    .login-wrapper 
+    {
+        min-width: 480px;
+    }
+}
+
+.login-input:focus
+{
+    box-shadow: 0px 1px 9px -3px green}
