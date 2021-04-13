@@ -83,6 +83,7 @@ class Login extends React.Component {
     login = (e) => {
         e.preventDefault();
         if (this.state.formValid) {
+            
             //Fetching the valid creds stored in the Local Storage
             var retrievedObject = localStorage.getItem('creds');
             retrievedObject = JSON.parse(retrievedObject);

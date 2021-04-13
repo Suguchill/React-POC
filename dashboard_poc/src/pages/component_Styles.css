@@ -35,7 +35,7 @@
 .page-style
 {
     background-color: #333333;
-    min-height: 100vh;
+    height: 100vh;
     border-radius: 20px; 
 }
 

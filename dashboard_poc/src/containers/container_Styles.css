@@ -1,0 +1,44 @@
+.leftDetailTab_Style
+{
+    height: 100%;
+    padding: 5%;
+}
+
+.profileStyle
+{
+    display: flex;
+}
+
+.imageStyle
+{
+    flex-basis: 20%;
+}
+
+.profileDetail-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.profileNameStyle 
+{
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.profilemailStyle
+{
+    font-size: 1rem;
+    color:white;
+}
+
+.rightInfoTab_Style
+{
+    background-color: #1a1a1a;
+    height: 95%;
+    margin: 1%;
+    width: 98%;
+    border-radius: 20px;
+}

@@ -14,7 +14,7 @@ const AvatarImage = (props) => {
       src={src}
       className={className}
       alt={alt}
-      { ...attrs }
+      { ...attrs } 
     />
   );
 }
