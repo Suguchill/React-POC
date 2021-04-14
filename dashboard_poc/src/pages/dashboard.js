@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeftDetailTab from "../containers/organisms/LeftDetailTab/LeftDetailTab";
-import RightInfoTab from "../containers/organisms/RightInfoTab/RightInfoTab";
+import LeftDetailTab from "../components/LeftDetailTab/LeftDetailTab";
+import RightInfoTab from "../components/RightInfoTab/RightInfoTab";
 import './component_Styles.css';
 
 const DashboardPage = (props) => 

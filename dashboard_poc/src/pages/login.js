@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router-dom';
-import Button from "../containers/atoms/Button/Button";
-import Input from "../containers/atoms/Input/Input";
+import Button from "../components/atoms/Button/Button";
+import Input from "../components/atoms/Input/Input";
 import './component_Styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
