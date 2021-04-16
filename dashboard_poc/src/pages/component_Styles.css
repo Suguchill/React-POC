@@ -36,7 +36,8 @@
 {
     background-color: #333333;
     height: 100vh;
-    border-radius: 20px; 
+    border-radius: 20px;
+    overflow-y: hidden; 
 }
 
 .detail-block
@@ -69,4 +70,15 @@ i
 
 .login-input:focus
 {
-    box-shadow: 0px 1px 9px -3px green}
+    box-shadow: 0px 1px 9px -3px green
+}
+
+.rightTabPositionStyle
+{
+    height: 100%;
+}
+
+.containerPositionStyle
+{
+    height: 100%;
+}

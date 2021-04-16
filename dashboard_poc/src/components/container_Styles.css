@@ -23,22 +23,118 @@
 
 .profileNameStyle 
 {
-    font-size: 2rem;
+    font-size: 18px;
     color: white;
     font-weight: bold;
 }
 
 .profilemailStyle
 {
-    font-size: 1rem;
+    font-size: 15px;
     color:white;
 }
 
 .rightInfoTab_Style
 {
     background-color: #1a1a1a;
-    height: 95%;
-    margin: 1%;
+    height: calc(100% - 50px);
+    margin: 25px auto;
     width: 98%;
     border-radius: 20px;
+    overflow-y: scroll;;
+}
+
+.leftDetailTab_Style .list-group-item
+{
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-left: 15%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.list-wrapper
+{
+    display: flex;
+}
+
+.list-wrapper .badge-secondary
+{
+    background-color: #ff66a3;
+}
+
+.btnStyle
+{
+    font-weight: bold;
+    margin-left: 45px;
+    margin-top:60%
+}
+
+.btnStyle a
+{
+    color: white;
+}
+
+.imageText-wrapper
+{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left 
+{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.titleStyle
+{
+    color: white;
+    font-size: 2rem;
+    padding-left: 4%;
+    font-weight: 400;
+}
+
+.information-wrapper
+{
+    height: 100%;
+    width: 100%;
+    position: relative; 
+    border-radius: 20px;
+}
+
+.information-wrapper .infoImageStyle
+{   
+    width: 100%;
+    border-radius: 20px;
+ }
+
+.information-wrapper .content-wrapper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.play-icon
+{
+
+}
+
+.container-Image-style
+{
+    display: flex;
+}
+
+
+.container-Image-style .information-wrapper:nth-child(2)
+{
+    margin-left: 20px;
 }

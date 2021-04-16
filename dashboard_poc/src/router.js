@@ -7,6 +7,7 @@ const RouterComp = () => {
     return (
         <Router>
             <Route exact path="/" component={Login}/>
+            <Route path = "/Login" component={Login}/>
             <Route path = "/DashboardPage" component={DashboardPage}/>
         </Router>
     )

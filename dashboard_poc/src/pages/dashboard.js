@@ -10,11 +10,11 @@ const DashboardPage = (props) =>
     return (
         <React.Fragment>
             <div className="container-fluid page-style">
-                <div className="row">
+                <div className="row containerPositionStyle">
                     <div className="col-md-3" >
                         <LeftDetailTab />
                     </div>
-                    <div className="col-md-9" >
+                    <div className="col-md-9 rightTabPositionStyle" >
                         <RightInfoTab />
                     </div>
                 </div>

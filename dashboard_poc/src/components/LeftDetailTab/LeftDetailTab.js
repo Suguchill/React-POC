@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AvatarImage from "../atoms/AvatarImage/AvatarImage";
 import HomeIcon from "../../assets/Home.png";
 import ProfileImg from "../../assets/Profile.png";
+import Button from "../atoms/Button/Button";
 import '../container_Styles.css';
 
 const LeftDetailTab = (props) => 
 {
-
     return (
         <React.Fragment>           
         <div className="container-fluid leftDetailTab_Style">
@@ -16,7 +16,7 @@ const LeftDetailTab = (props) =>
                     <div className="text-left">
                         <AvatarImage src={HomeIcon} alt="Image" className="img-fluid" width="17%"/>
                     </div>
-                    <div className='mt-5 profileStyle'>
+                    <div className='mt-5 mb-5 profileStyle'>
                         <div className = "imageStyle">
                             <AvatarImage src={ProfileImg} alt="Profile Image" className="rounded-circle" width="100%"/>
                         </div>
@@ -24,6 +24,19 @@ const LeftDetailTab = (props) =>
                             <div className="profileNameStyle">John Doe</div>
                             <div className="profilemailStyle">johndoe@bt.com</div>
                         </div>
+                    </div>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Motivation</li>
+                            <div className="list-wrapper">
+                                <li class="list-group-item">Productivity<span class="badge badge-secondary ml-5">New Added</span></li>        
+                            </div>
+                            <li class="list-group-item">Design</li>
+                            <li class="list-group-item">Study</li>
+                        </ul> 
+                    </div>
+                    <div className="btnStyle">
+                        <Button value="LogOut" href="/Login"></Button>
                     </div>
                 </div>
             </div>
