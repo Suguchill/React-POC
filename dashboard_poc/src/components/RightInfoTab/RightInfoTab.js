@@ -12,21 +12,25 @@ import InformationBlock from "../InformationBlock/InformationBlock";
 const RightInfoTab = (props) => 
 {
     var ibProps = [{
+        variant:"",
         imgSrc: img1,
         altText: "image alt text",
         title: "Your limitation it's only your imagination.",
     },
     {
+        variant:"",
         imgSrc: img2,
         altText: "image alt text",
         title: "Great things never come from comfort zones",
     },
     {
+        variant:"",
         imgSrc: img3,
         altText: "image alt text",
         title: "Dream it. Wish it. Do it",
     },
     {
+        variant:"withCTA",
         imgSrc: img4,
         altText: "image alt text",
         title: "Stay Focused",
@@ -34,9 +38,10 @@ const RightInfoTab = (props) =>
         className: "btn btn-dark"
     },
     {
+        variant:"withPlayButton",
         imgSrc: img5,
         altText: "image alt text",
-        title: "Information Block",
+        title: "Things that go around will always come back",
     },
     {
         variant: "",
