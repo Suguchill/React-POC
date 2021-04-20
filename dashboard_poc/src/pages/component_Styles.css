@@ -81,4 +81,9 @@ i
 .containerPositionStyle
 {
     height: 100%;
+    overflow-y: scroll;
 }
+
+.containerPositionStyle::-webkit-scrollbar {
+    display: none;
+  }
