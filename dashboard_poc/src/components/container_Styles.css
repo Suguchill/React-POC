@@ -128,8 +128,25 @@
     display: flex;
 }
 
-
 .container-Image-style .information-wrapper:nth-child(2)
 {
     margin-left: 20px;
+}
+
+@media (max-width: 768px) { 
+    .container-Image-style
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-Image-style .information-wrapper:nth-child(2)
+    {
+        margin-left: 0px;
+    }
+
+    .information-wrapper
+    {
+        margin-top: 10px;
+    }
 }

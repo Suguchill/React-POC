@@ -19,8 +19,7 @@ const Button = (props) => {
 
 Button.propTypes = {
   className: PropTypes.string,
-  href: PropTypes.string,
-  value: PropTypes.string,
+  href: PropTypes.string
 }
 
 Button.defaultProps = {

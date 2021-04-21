@@ -23,7 +23,7 @@ const play = <FontAwesomeIcon icon={faPlay} />;
 
 const InformationBlock = (props) => {
     return (
-        <div class="information-wrapper">
+        <div className="information-wrapper">
             <img src={props.imgSrc} alt={props.altText} className="infoImageStyle"/>
             <div className="content-wrapper">
                 <IBVariantsFactory {...props}/>
@@ -57,7 +57,7 @@ const IBWithPlayButton = (props) => {
         <>
             <label>{props.title}</label>
             <div className="mt-3">
-                <Button href="#" class="fa fa-2x" value={play}></Button>
+                <Button href="#" className="fa fa-2x" value={play}></Button>
             </div>
         </>
     );

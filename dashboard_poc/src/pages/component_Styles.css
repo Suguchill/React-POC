@@ -84,6 +84,14 @@ i
     overflow-y: scroll;
 }
 
+@media (max-width: 768px) { 
+    .containerPositionStyle{
+        display: flex;
+        flex-flow: column-reverse;
+    }
+}
+
+
 .containerPositionStyle::-webkit-scrollbar {
     display: none;
   }

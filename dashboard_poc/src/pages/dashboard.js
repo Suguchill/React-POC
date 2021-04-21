@@ -6,7 +6,6 @@ import './component_Styles.css';
 
 const DashboardPage = (props) => 
 {
- 
     return (
         <React.Fragment>
             <div className="container-fluid page-style">

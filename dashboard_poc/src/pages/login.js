@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router-dom';
 import Button from "../components/atoms/Button/Button";
@@ -8,108 +8,134 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 
-class Login extends React.Component {
+const Login = (props) => {
+    const [uname, setUname] = useState('');
+    const [password, setPassword] = useState('');
+    const [formErrors, setFormErrors] = useState({
+        emailErr: '',
+        passErr: ''
+    });
+    const [fieldValidity, setFieldValidity] = useState({
+        uname: false,
+        password: false
+    });
+    const [formValid, setFormValid] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [loginErrMsg, setLoginErrMsg] = useState('');
+    const [passwordShown, setPasswordShown] = useState(false);
 
-    constructor() {
-        super();
-        this.state = {
-            uname: '',
-            password: '',
-            formErrors: {
-                emailErr: '',
-                passErr: ''
-            },
-            fieldValidity: {
-                uname: false,
-                password: false
-            },
-            formValid: false,
-            submitted: false,
-            success: false,
-            successMessage: '',
-            loginErrMsg: '',
-            passwordShown: false
-        };
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         uname: '',
+    //         password: '',
+    //         formErrors: {
+    //             emailErr: '',
+    //             passErr: ''
+    //         },
+    //         fieldValidity: {
+    //             uname: false,
+    //             password: false
+    //         },
+    //         formValid: false,
+    //         submitted: false,
+    //         success: false,
+    //         successMessage: '',
+    //         loginErrMsg: '',
+    //         passwordShown: false
+    //     };
 
-        //Setting up the Login credentials in Local Storage.
-        if (typeof (Storage) !== "undefined") {
-            var creds = { 'admin': 'admin', 'positive': 'positive' };
-            localStorage.setItem('creds', JSON.stringify(creds));
-        }
+    //Setting up the Login credentials in Local Storage.
+    if (typeof (Storage) !== "undefined") {
+        var creds = { 'admin': 'admin', 'positive': 'positive' };
+        localStorage.setItem('creds', JSON.stringify(creds));
     }
+    
 
-    togglePasswordVisiblity = () => {
+    const togglePasswordVisiblity = () => {
         var passToggleFlag = true;
-        if (this.state.passwordShown) {
+        if (passwordShown) {
             passToggleFlag = false
         }
-        this.setState({ passwordShown: passToggleFlag });
+        setPasswordShown(passToggleFlag);
     };
 
-    validateUname = (e) => {
+    const validateUname = (e) => {
         const uname = e.target.value;
-        var formErrors = this.state.formErrors;
-        var fieldValidity = this.state.fieldValidity;
-        this.setState({ uname: e.target.value });
+        var localFormErrors = {
+            ...formErrors
+        }
+        var localFieldValidity = {
+            ...fieldValidity
+        };
+        console.log('form Err - FV '+formErrors+fieldValidity);
+        setUname(e.target.value);
         if (uname !== "") {
-            formErrors.emailErr = "";
-            fieldValidity.uname = true;
+            localFormErrors.emailErr = "";
+            localFieldValidity.uname = true;
         }
         else {
-            formErrors.emailErr = "*Required";
-            fieldValidity.uname = false;
+            localFormErrors.emailErr = "*Required";
+            localFieldValidity.uname = false;
         }
-        this.setState({ fieldValidity: fieldValidity })
-        this.setState({ formValid: fieldValidity.uname && fieldValidity.password })
+        setFieldValidity(localFieldValidity);
+        setFormErrors(localFormErrors);
+        console.log('fv'+JSON.stringify(fieldValidity));
+        setFormValid(fieldValidity.uname && fieldValidity.password)
     }
 
-    validatePassword = (e) => {
+    const validatePassword = (e) => {
         const password = e.target.value;
-        var formErrors = this.state.formErrors;
-        var fieldValidity = this.state.fieldValidity;
-        this.setState({ password: e.target.value });
+        var localFormErrors = formErrors;
+        var localFieldValidity = {
+            ...fieldValidity
+        };
+        setPassword(e.target.value);
         if (password !== "") {
-            formErrors.passErr = "";
-            fieldValidity.password = true;
+            localFormErrors.passErr = "";
+            localFieldValidity.password = true;
         }
         else {
-            formErrors.passErr = "*Required";
-            fieldValidity.password = false;
+            localFormErrors.passErr = "*Required";
+            localFieldValidity.password = false;
         }
-        this.setState({ fieldValidity: fieldValidity })
-        this.setState({ formValid: fieldValidity.uname && fieldValidity.password })
+        setFieldValidity(localFieldValidity)
+        setFormErrors(localFormErrors);
+        console.log('fp'+JSON.stringify(fieldValidity));
+        setFormValid(fieldValidity.uname && fieldValidity.password)
     }
 
-    login = (e) => {
+    const login = (e) => {
         e.preventDefault();
-        if (this.state.formValid) {
-            
+        if (formValid) {
             //Fetching the valid creds stored in the Local Storage
             var retrievedObject = localStorage.getItem('creds');
             retrievedObject = JSON.parse(retrievedObject);
 
-            if (retrievedObject[this.state.uname] !== undefined) {
-                if (retrievedObject[this.state.uname] === this.state.password) {
+            if (retrievedObject[uname] !== undefined) {
+                if (retrievedObject[uname] === password) {
                     console.log("Login Success");
-                    this.setState({ success: true })
+                    setSuccess(true);
+                    props.setLoginState(true);
                 }
                 else {
                     console.log("Login Failed1");
-                    this.setState({ loginErrMsg: "Login Failed..!" })
+                    setLoginErrMsg("Login Failed..!");
                 }
             }
             else {
                 console.log("Login Failed2");
-                this.setState({ loginErrMsg: "Login Failed..!" })
+                setLoginErrMsg("Login Failed..!");
             }
         }
     }
 
-    render() {
-        var redirect = null;
-        if (this.state.success) {
-            redirect = <Redirect to="/DashboardPage" push />
-        }
+    var redirect = null;
+    if (success) {
+        redirect = <Redirect to="/DashboardPage" push />
+    }
         return (
             <React.Fragment>
                 <div className="bgColorSet">
@@ -122,20 +148,20 @@ class Login extends React.Component {
                                         <form className="mt-4">
                                             <div className="form-group">
                                                 <label>USERNAME</label>
-                                                <Input type="text" className="form-control login-input" onChange={this.validateUname} />
+                                                <Input type="text" className="form-control login-input" onChange={validateUname} />
                                             </div>
                                             <div className="mb-2">
-                                                <span className="text-danger">{this.state.formErrors.emailErr}</span>
+                                                <span className="text-danger">{formErrors.emailErr}</span>
                                             </div>
                                             <div className="form-group">
                                                 <label>PASSWORD</label>
                                                 <div className="password-wrapper">
-                                                    <Input type={this.state.passwordShown ? "text" : "password"} className="form-control login-input" onChange={this.validatePassword} />
-                                                    <i onClick={this.togglePasswordVisiblity}>{eye}</i>
+                                                    <Input type={passwordShown ? "text" : "password"} className="form-control login-input" onChange={validatePassword} />
+                                                    <i onClick={togglePasswordVisiblity}>{eye}</i>
                                                 </div>
                                             </div>
                                             <div className="mb-2">
-                                                <span className="text-danger">{this.state.formErrors.passErr}</span>
+                                                <span className="text-danger">{formErrors.passErr}</span>
                                             </div>
                                             <div className="login-bottom-wrapper">
                                                 <div className="mt-2"><Input type="checkbox" id="rememberCheck" />
@@ -144,10 +170,10 @@ class Login extends React.Component {
                                                 {redirect}
                                             </div>
                                             <div className="mt-4">
-                                                <Button className="btn btn-dark" value="Login" disabled={!this.state.formValid} onClick={this.login} />
+                                                <Button className="btn btn-dark" value="Login" disabled={!formValid} onClick={login} />
                                             </div>
                                             <div className="mt-3">
-                                                <span className="text-danger"><p>{this.state.loginErrMsg}</p></span>
+                                                <span className="text-danger"><p>{loginErrMsg}</p></span>
                                             </div>
                                         </form>
                                     </div>
@@ -159,5 +185,4 @@ class Login extends React.Component {
             </React.Fragment>
         )
     }
-}
 export default Login;

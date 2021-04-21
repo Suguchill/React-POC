@@ -26,13 +26,13 @@ const LeftDetailTab = (props) =>
                         </div>
                     </div>
                     <div>
-                        <ul class="list-group">
-                            <li class="list-group-item font-weight-bold">Motivation</li>
+                        <ul className="list-group">
+                            <li className="list-group-item font-weight-bold">Motivation</li>
                             <div className="list-wrapper">
-                                <li class="list-group-item">Productivity<span class="badge badge-secondary ml-5">New Added</span></li>        
+                                <li className="list-group-item">Productivity<span className="badge badge-secondary ml-5">New Added</span></li>        
                             </div>
-                            <li class="list-group-item">Design</li>
-                            <li class="list-group-item">Study</li>
+                            <li className="list-group-item">Design</li>
+                            <li className="list-group-item">Study</li>
                         </ul> 
                     </div>
                     <div className="btnStyle">
