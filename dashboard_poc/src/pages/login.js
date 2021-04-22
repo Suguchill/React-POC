@@ -1,4 +1,4 @@
-import React , { useState, useEffect} from "react";
+import React , { useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router-dom';
 import Button from "../components/atoms/Button/Button";
@@ -25,27 +25,6 @@ const Login = (props) => {
     const [successMessage, setSuccessMessage] = useState('');
     const [loginErrMsg, setLoginErrMsg] = useState('');
     const [passwordShown, setPasswordShown] = useState(false);
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         uname: '',
-    //         password: '',
-    //         formErrors: {
-    //             emailErr: '',
-    //             passErr: ''
-    //         },
-    //         fieldValidity: {
-    //             uname: false,
-    //             password: false
-    //         },
-    //         formValid: false,
-    //         submitted: false,
-    //         success: false,
-    //         successMessage: '',
-    //         loginErrMsg: '',
-    //         passwordShown: false
-    //     };
 
     //Setting up the Login credentials in Local Storage.
     if (typeof (Storage) !== "undefined") {

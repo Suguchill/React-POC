@@ -1,0 +1,10 @@
+.navbar
+{
+  background-color: #0d0d0d;
+}
+
+.nav-item
+{
+  display: inline;
+  padding: 2%;
+}
