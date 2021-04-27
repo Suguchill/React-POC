@@ -5,7 +5,7 @@ export default {
   title: 'components/atoms/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: { control: 'color' },
   },
 };
 

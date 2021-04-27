@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * Primary UI component for user interaction
@@ -20,20 +21,6 @@ import './button.css';
 // };
 
 export const Button = ({ className, color, value, href, ...attrs }) => {
-  let mode = '';
-  if(className == "btn btn-primary")
-  {
-    mode = "storybook-button--primary";
-  }
-  else if(className == "btn btn-secondary")
-  {
-    mode = "storybook-button--secondary";
-  }
-  else if(className == "btn btn-dark")
-  {
-    mode = "storybook-button--dark";
-  }
-
   let Tag = "button"
   if (href) {
     Tag = 'a';
@@ -42,7 +29,7 @@ export const Button = ({ className, color, value, href, ...attrs }) => {
   return (
     <Tag
       type="button"
-      className={['storybook-button', mode].join(' ')}
+      className={className}
       style={color && { color }}
       {...attrs}
     >
@@ -50,30 +37,6 @@ export const Button = ({ className, color, value, href, ...attrs }) => {
     </Tag>
   );
 };
-
-// Button.propTypes = {
-//   /**
-//    * Is this the principal call to action on the page?
-//    */
-//   primary: PropTypes.bool,
-//   /**
-//    * What background color to use
-//    */
-//   backgroundColor: PropTypes.string,
-//   /**
-//    * How large should the button be?
-//    */
-//   size: PropTypes.oneOf(['small', 'medium', 'large']),
-//   /**
-//    * Button contents
-//    */
-//   label: PropTypes.string.isRequired,
-//   /**
-//    * Optional click handler
-//    */
-//   onClick: PropTypes.func,
-
-// };
 
 Button.propTypes = {
   className: PropTypes.string,
@@ -86,4 +49,5 @@ Button.defaultProps = {
   className: 'btn btn-primary',
   value: 'button',
   href: '',
+  color:'white'
 };

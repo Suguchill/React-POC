@@ -1,0 +1,73 @@
+.bgColorSet
+{
+    background-color:  #e6e6e6;
+    height: 100vh;
+    overflow:hidden;
+}
+
+.bgColorSet .container
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 600px)
+{
+    .login-wrapper 
+    {
+        min-width: 480px;
+    }
+}
+
+.login_card
+{
+    width : auto;
+    padding: 30px;
+}
+
+/* .login-input:focus
+{
+    box-shadow: 0px 1px 9px -3px green
+} */
+
+.password-wrapper 
+{
+    position: relative;
+}
+
+i
+{
+    position: absolute;
+    right: 5px;
+    top: 6px;
+}
+
+.login-bottom-wrapper
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+@media only screen and (min-width: 841px)
+{
+    .rememberMe-wrapper
+    {
+        display: flex;
+        flex-basis: 60%;
+        align-items: center;
+    }
+
+    .rememberMe-wrapper > label{
+        margin-bottom: 0%;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{  
+    .login-bottom-wrapper
+    {
+        flex-direction: column;
+    }
+}

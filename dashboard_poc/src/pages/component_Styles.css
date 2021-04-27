@@ -19,12 +19,6 @@
     align-items: center;
 }
 
-.login-bottom-wrapper
-    {
-        display: flex;
-        justify-content: space-between;
-    }
-
 @media only screen and (max-width: 600px)
 {  
     .login-bottom-wrapper
@@ -76,6 +70,7 @@ i
 .rightTabPositionStyle
 {
     height: 100%;
+    max-width: 100%;
 }
 
 .containerPositionStyle
@@ -91,7 +86,15 @@ i
     }
 }
 
+@media (min-width: 768px)
+{
+    .containerPositionStyle .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 100%;
+    }
+}
 
 .containerPositionStyle::-webkit-scrollbar {
     display: none;
   }
+  

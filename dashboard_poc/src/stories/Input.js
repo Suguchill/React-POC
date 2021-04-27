@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Input.css';
+import './input.css';
 
 export const Input = ({ className, value, type, placeholder, label, ...attrs }) => {
     let isCheckbox=false;
@@ -23,15 +23,15 @@ export const Input = ({ className, value, type, placeholder, label, ...attrs }) 
 };
 
 Input.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.string,
-  type: PropTypes.string,
-  placeholder: PropTypes.string
+    className: PropTypes.string,
+    value: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string
 };
 
 Input.defaultProps = {
-  className: '',
-  value: '',
-  type: "text",
-  placeholder: ''
+    className: '',
+    value: '',
+    type: "text",
+    placeholder: ''
 };
