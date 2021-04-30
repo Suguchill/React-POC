@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from './Input';
+import Input from '../components/atoms/Input/Input';
 
 export default {
   title: 'components/atoms/Input',
@@ -36,4 +36,3 @@ Checkbox.args = {
     onChange:()=>{},
     label:"Remember Me"
 };
-

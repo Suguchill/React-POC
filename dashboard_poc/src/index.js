@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import './components/container_Styles.css';
+import './pages/component_Styles.css';
 import RouterComp from './router';
 import reportWebVitals from './reportWebVitals';
 

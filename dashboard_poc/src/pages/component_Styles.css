@@ -4,6 +4,13 @@
     padding: 30px;
 }
 
+.storyLabelStyle
+{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 1%;
+    font-size: medium;
+}
+
 .bgColorSet
 {
     background-color:  #e6e6e6;
@@ -17,6 +24,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.login-bottom-wrapper
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-label-wrapper
+{
+    display: flex;
+    align-content: flex-start;
 }
 
 @media only screen and (max-width: 600px)

@@ -26,7 +26,9 @@ AvatarImage.propTypes = {
 };
 
 AvatarImage.defaultProps = {
-  alt: 'Image',
+    className: 'rounded-circle',
+    alt: 'Image',
+    src: ''
 }
 
 export default AvatarImage;

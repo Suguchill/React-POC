@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from "../atoms/Button/Button";
-import '../container_Styles.css';
+// import '../container_Styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 const play = <FontAwesomeIcon icon={faPlay} />;

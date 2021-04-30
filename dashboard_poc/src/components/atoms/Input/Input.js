@@ -10,7 +10,14 @@ const Input = (props) => {
     ...attrs
   } = props;
 
+    let isCheckbox=false;
+    if(type=="checkbox")
+    {
+        isCheckbox = true;
+    }
+
   return (
+    <>
     <input
       type={type}
       className={className}
@@ -18,6 +25,8 @@ const Input = (props) => {
       value={value}
       { ...attrs }
     />
+    {isCheckbox && <span className="storyLabelStyle">{attrs.label}</span>}
+    </>
   );
 }
 

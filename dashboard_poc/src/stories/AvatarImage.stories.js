@@ -1,5 +1,5 @@
 import React from 'react';
-import { AvatarImage } from './AvatarImage';
+import AvatarImage from '../components/atoms/AvatarImage/AvatarImage';
 import ProfileImg from './assets/Profile.png';
 
 export default {

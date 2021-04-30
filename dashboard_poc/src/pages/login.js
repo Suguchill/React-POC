@@ -143,8 +143,9 @@ const Login = (props) => {
                                                 <span className="text-danger">{formErrors.passErr}</span>
                                             </div>
                                             <div className="login-bottom-wrapper">
-                                                <div className="mt-2"><Input type="checkbox" id="rememberCheck" />
-                                                    <label className="ml-2">Remember me</label></div>
+                                                <div className="mt-2 checkbox-label-wrapper"><Input type="checkbox" id="rememberCheck" label="Remember Me" />
+                                                    {/* <label className="ml-2">Remember me</label>*/}
+                                                </div>
                                                 <div><Button className="btn" value="Forgot Password?" href="" /></div>
                                                 {redirect}
                                             </div>
