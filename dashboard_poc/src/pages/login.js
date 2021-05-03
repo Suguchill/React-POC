@@ -1,9 +1,7 @@
-import React , { useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React , {useState} from "react";
 import { Redirect } from 'react-router-dom';
 import Button from "../components/atoms/Button/Button";
 import Input from "../components/atoms/Input/Input";
-import './component_Styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;

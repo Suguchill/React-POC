@@ -9,6 +9,12 @@ export default {
   },
 };
 
+// export const accessible = () => <button>Accessible button</button>;
+
+// export const inaccessible = () => (
+//   <button style={{backgroundcolor: 'red', color:'darkRed'}}>Inaccessible button</button>
+// )
+
 const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});

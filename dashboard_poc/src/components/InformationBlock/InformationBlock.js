@@ -1,25 +1,8 @@
-import React, { useState, useEffect } from "react";
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 import Button from "../atoms/Button/Button";
-// import '../container_Styles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 const play = <FontAwesomeIcon icon={faPlay} />;
-
-
-// const InformationBlock = (props) => {
-//     return (
-//         <div className="information-wrapper">
-//             <img src={props.imgSrc} alt={props.altText} className="infoImageStyle"/>
-//             <div className="content-wrapper">
-//                 <label>{props.title}</label>
-//                 <div className="mt-3">
-//                     {props.ctaTitle && <Button value={props.ctaTitle} className={props.className}></Button>}    
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 
 const InformationBlock = (props) => {
     return (
@@ -47,15 +30,17 @@ const IBVariantsFactory = (props) => {
 }
 
 const DefaultIB = (props) => {
+    let color = props.IbFontColor;
     return (
-        <label>{props.title}</label>
+        <label style={props.IbFontColor && { color }}>{props.title}</label>
     );
 } 
 
 const IBWithPlayButton = (props) => {
+    let color = props.IbFontColor;
     return(
         <>
-            <label>{props.title}</label>
+            <label style={props.IbFontColor && { color }}>{props.title}</label>
             <div className="mt-3">
                 <Button href="#" className="fa fa-2x" value={play}></Button>
             </div>
@@ -64,9 +49,10 @@ const IBWithPlayButton = (props) => {
 }
 
 const IBWithCTA = (props) => {
+    let color = props.IbFontColor;
     return (
         <div>
-        <label>{props.title}</label>
+        <label style={props.IbFontColor && { color }}>{props.title}</label>
         <div className="mt-3">
             <Button value={props.ctaTitle} className={props.className}></Button>
         </div>

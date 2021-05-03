@@ -1,55 +1,12 @@
-import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import img1 from "../../assets/img1.jpg";
-import img2 from "../../assets/img2.jpg";
-import img3 from "../../assets/img3.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
-import img6 from "../../assets/img6.jpg";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
-import '../container_Styles.css';
 import InformationBlock from "../InformationBlock/InformationBlock";
+
 const RightInfoTab = (props) => 
 {
-    var ibProps = [{
-        variant:"",
-        imgSrc: img1,
-        altText: "image alt text",
-        title: "Your limitation it's only your imagination.",
-    },
-    {
-        variant:"",
-        imgSrc: img2,
-        altText: "image alt text",
-        title: "Great things never come from comfort zones",
-    },
-    {
-        variant:"",
-        imgSrc: img3,
-        altText: "image alt text",
-        title: "Dream it. Wish it. Do it",
-    },
-    {
-        variant:"withCTA",
-        imgSrc: img4,
-        altText: "image alt text",
-        title: "Stay Focused",
-        ctaTitle: "Read Articles",
-        className: "btn btn-dark"
-    },
-    {
-        variant:"withPlayButton",
-        imgSrc: img5,
-        altText: "image alt text",
-        title: "Things that go around will always come back",
-    },
-    {
-        variant: "",
-        imgSrc: img6,
-        altText: "image alt text",
-        title: "Information Block",
-    }
-];
+    var ibProps = props['ibProps'];
+    var NavProps =  props['navProps'];
+
     return (
         <React.Fragment>
             <div className="container-fluid rightInfoTab_Style">
@@ -57,7 +14,7 @@ const RightInfoTab = (props) =>
                     Motivation
                 </div>
                 <div className="row">
-                    <Navbar></Navbar>
+                    <Navbar {...NavProps}></Navbar>
                 </div>
                 <div className="row mt-2">
                         <div className="col-md-5">
@@ -83,7 +40,7 @@ const RightInfoTab = (props) =>
                                 <InformationBlock {...ibProps[3]} />
                             </div>
                             </div>
-                        </div> 
+                </div> 
             </div>
         </React.Fragment>
     )

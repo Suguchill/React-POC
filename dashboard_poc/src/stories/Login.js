@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './login.css';
-import {Input} from './Input';
-import {Button} from './Button';
+import Input from '../components/atoms/Input/Input';
+import Button from '../components/atoms/Button/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";

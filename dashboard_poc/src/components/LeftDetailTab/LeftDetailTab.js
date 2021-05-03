@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 import AvatarImage from "../atoms/AvatarImage/AvatarImage";
 import HomeIcon from "../../assets/Home.png";
 import ProfileImg from "../../assets/Profile.png";
 import Button from "../atoms/Button/Button";
-import '../container_Styles.css';
 
 const LeftDetailTab = (props) => 
 {

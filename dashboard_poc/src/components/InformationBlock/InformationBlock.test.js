@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from "@testing-library/react"
+import { cleanup, render } from "@testing-library/react"
 import InformationBlock from './InformationBlock';
 
 afterEach(cleanup)
@@ -35,7 +35,7 @@ describe("InformationBlock Component", () => {
         altText: "image alt text",
         title: "Things that go around will always come back",
     }
-]
+    ]
 
     it("Rendering content IB1",() => {
         const {getByAltText} = render(<InformationBlock {...InformationBlockProps[0]} />)
