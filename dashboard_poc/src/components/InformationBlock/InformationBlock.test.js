@@ -1,7 +1,10 @@
 import React from 'react';
 import { cleanup, render } from "@testing-library/react"
 import InformationBlock from './InformationBlock';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
 
+configure({adapter: new Adapter()});
 afterEach(cleanup)
 
 describe("InformationBlock Component", () => {
@@ -48,4 +51,9 @@ describe("InformationBlock Component", () => {
         const value = getByAltText("image alt text")
         expect(value.getAttribute("class")).toBe("infoImageStyle")
     })
+
+    it('should render correctly', () => {
+        const component = shallow(<InformationBlock debug />);
+        expect(component).toMatchSnapshot();
+    });
 })

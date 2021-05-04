@@ -1,6 +1,10 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from "@testing-library/react"
 import Button from './Button';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
+
+configure({adapter: new Adapter()});
 
 afterEach(cleanup)
 
@@ -30,4 +34,9 @@ describe("Button Component", () => {
         fireEvent.click(value)
         expect(onClick).toHaveBeenCalledTimes(1)
     })
+
+    it('should render correctly', () => {
+        const component = shallow(<Button debug />);
+        expect(component).toMatchSnapshot();
+    });
 })

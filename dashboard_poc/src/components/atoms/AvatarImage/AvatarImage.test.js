@@ -1,6 +1,10 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from "@testing-library/react"
+import { cleanup, render } from "@testing-library/react"
 import AvatarImage from './AvatarImage'
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
+
+configure({adapter: new Adapter()});
 
 afterEach(cleanup)
 
@@ -20,4 +24,8 @@ describe("Button Component", () => {
         // expect(value.getAttribute("src")).toBe(ProfileImg)
     })
 
+    it('Render correctly', () => {
+        const component = shallow(<AvatarImage debug />);
+        expect(component).toMatchSnapshot();
+    });
 })

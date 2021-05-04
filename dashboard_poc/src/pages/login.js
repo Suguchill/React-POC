@@ -47,7 +47,7 @@ const Login = (props) => {
         var localFieldValidity = {
             ...fieldValidity
         };
-        console.log('form Err - FV '+formErrors+fieldValidity);
+
         setUname(e.target.value);
         if (uname !== "") {
             localFormErrors.emailErr = "";
@@ -59,7 +59,6 @@ const Login = (props) => {
         }
         setFieldValidity(localFieldValidity);
         setFormErrors(localFormErrors);
-        console.log('fv'+JSON.stringify(fieldValidity));
         setFormValid(fieldValidity.uname && fieldValidity.password)
     }
 
@@ -80,7 +79,6 @@ const Login = (props) => {
         }
         setFieldValidity(localFieldValidity)
         setFormErrors(localFormErrors);
-        console.log('fp'+JSON.stringify(fieldValidity));
         setFormValid(fieldValidity.uname && fieldValidity.password)
     }
 
@@ -93,17 +91,14 @@ const Login = (props) => {
 
             if (retrievedObject[uname] !== undefined) {
                 if (retrievedObject[uname] === password) {
-                    console.log("Login Success");
                     setSuccess(true);
                     props.setLoginState(true);
                 }
                 else {
-                    console.log("Login Failed1");
                     setLoginErrMsg("Login Failed..!");
                 }
             }
             else {
-                console.log("Login Failed2");
                 setLoginErrMsg("Login Failed..!");
             }
         }
@@ -125,7 +120,7 @@ const Login = (props) => {
                                         <form className="mt-4">
                                             <div className="form-group">
                                                 <label>USERNAME</label>
-                                                <Input type="text" className="form-control login-input" onChange={validateUname} />
+                                                <Input type="text" data-testid="userField" className="form-control login-input" onChange={validateUname} />
                                             </div>
                                             <div className="mb-2">
                                                 <span className="text-danger">{formErrors.emailErr}</span>
@@ -133,7 +128,7 @@ const Login = (props) => {
                                             <div className="form-group">
                                                 <label>PASSWORD</label>
                                                 <div className="password-wrapper">
-                                                    <Input type={passwordShown ? "text" : "password"} className="form-control login-input" onChange={validatePassword} />
+                                                    <Input type={passwordShown ? "text" : "password"} data-testid="passField" className="form-control login-input" onChange={validatePassword} />
                                                     <i onClick={togglePasswordVisiblity}>{eye}</i>
                                                 </div>
                                             </div>
@@ -148,7 +143,7 @@ const Login = (props) => {
                                                 {redirect}
                                             </div>
                                             <div className="mt-4">
-                                                <Button className="btn btn-dark" value="Login" disabled={!formValid} onClick={login} />
+                                                <Button className="btn btn-dark" id="submit" value="Login" disabled={!formValid} onClick={login} />
                                             </div>
                                             <div className="mt-3">
                                                 <span className="text-danger"><p>{loginErrMsg}</p></span>

@@ -18,5 +18,7 @@ module.export = {
     ], // setupFiles before the tests are ran
     moduleNameMapper: {
       '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy'
-    }
+    },
+    setupFiles: ["./src/setupTests.js"],
+    snapshotSerializers: ["enzyme-to-json/serializer"]
   };

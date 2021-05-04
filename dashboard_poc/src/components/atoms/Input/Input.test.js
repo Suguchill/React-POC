@@ -1,7 +1,10 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from "@testing-library/react"
 import Input from './Input';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
 
+configure({adapter: new Adapter()});
 afterEach(cleanup)
 
 describe("Input Component", () => {
@@ -58,4 +61,9 @@ describe("Input Component", () => {
         fireEvent.change(value, { target: { value: 'changed' } })
         expect(onChange).toHaveBeenCalledTimes(2)
     })
+
+    it('should render correctly', () => {
+        const component = shallow(<Input debug />);
+        expect(component).toMatchSnapshot();
+    });
 })

@@ -1,6 +1,10 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from "@testing-library/react"
+import { cleanup, render } from "@testing-library/react"
 import Navbar from './Navbar';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
+
+configure({adapter: new Adapter()});
 
 afterEach(cleanup)
 
@@ -44,5 +48,9 @@ describe("Navbar Component", () => {
         expect(value.getAttribute("class")).toBe("nav-link")
         expect(value.getAttribute("href")).toBe("#")
     })
-   
+
+    it('should render correctly', () => {
+        const component = shallow(<Navbar debug />);
+        expect(component).toMatchSnapshot();
+    });
 })
