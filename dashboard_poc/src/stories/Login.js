@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 
-export const Login = ({value1, value2, emailErr, passErr, passwordShown, formValid, loginErrMsg, boxShadowColor}) => {
+const Login = ({value1, value2, emailErr, passErr, passwordShown, formValid, loginErrMsg, boxShadowColor}) => {
     return(
     <div className="bgColorSet">
     <div className="container"><br />
@@ -80,5 +80,7 @@ Login.defaultProps = {
     passwordShown: false,
     formValid: false,
     loginErrMsg: "",
-    boxShadowColor: ""
+    boxShadowColor: "green"
 };
+
+export default Login;

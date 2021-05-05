@@ -39,7 +39,7 @@ const RightInfoTab = (props) =>
                             <div className="container-Image-style mt-3">
                                 <InformationBlock {...ibProps[3]} />
                             </div>
-                            </div>
+                        </div>
                 </div> 
             </div>
         </React.Fragment>

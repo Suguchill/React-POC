@@ -8,7 +8,7 @@ configure({adapter: new Adapter()});
 
 afterEach(cleanup)
 
-describe("Button Component", () => {
+describe("AvatarImage Component", () => {
     const AvatarImageProps = {
         id: "avatarimg",
         className: "img-fluid",
@@ -16,7 +16,7 @@ describe("Button Component", () => {
         src: ""
     }
 
-    it("Rendering content",() => {
+    it("Rendering Image content with Text and class",() => {
         const {getByAltText} = render(<AvatarImage {...AvatarImageProps} />)
         const value = getByAltText("Avatar Image")
         expect(value.getAttribute("id")).toBe("avatarimg")

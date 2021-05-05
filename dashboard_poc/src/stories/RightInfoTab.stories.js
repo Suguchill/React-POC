@@ -11,9 +11,13 @@ export default {
   title: 'components/RightInfoTab',
   component: RightInfoTab,
   argTypes: {
-
   },
 };
+
+// export const defaultView = () => <div>Jest results in storybook</div>;
+// defaultView.parameters = {
+//   jest: ['RightInfoTab.test.js'],
+// };
 
 const Template = (args) => <RightInfoTab {...args} />;
 

@@ -17,15 +17,14 @@ describe('loginComponent', () => {
         expect(component).toMatchSnapshot();
     });
 
-    it("testing event handlers",() => {
-        const { getByText, getByTestId} = render(<Login setLoginState={setLoginState} />)
+    // it("testing event handlers",() => {
+    //     const { getByText, getByTestId} = render(<Login setLoginState={setLoginState} />)
         
-        const name = getByTestId("userField")
-        userEvent.type(name, 'admin')
-        const pass = getByTestId("passField")
-        userEvent.type(pass, '')
+    //     const name = getByTestId("userField")
+    //     userEvent.type(name, 'admin')
+    //     const pass = getByTestId("passField")
+    //     userEvent.type(pass, '')
 
-        getByText('*Required')
-    })
-
+    //     getByText('*Required')
+    // })
 });
